@@ -20,7 +20,7 @@ div#container-page > main#main > ul#table-of-contents {
     color: red;
     list-style-type: none;
 }
-div#container-page > nav#nav-binary > a#hamburger-menu,
+div#container-page > nav#nav-binary > a#hamburger-start,
 div#container-page > nav#nav-binary > a.direction {
     color: black;
 }
@@ -33,7 +33,7 @@ div#container-page > ul#nav-menu {
     padding-left: 0;
     padding-top: 1rem;
 }
-div#container-page > ul#nav-menu > a#hamburger-positioned {
+div#container-page > ul#nav-menu > a#hamburger-menu {
     font-size: 1rem;
 }
 div#container-page > ul#nav-menu > li {
@@ -88,7 +88,7 @@ div#container-page > nav#nav-binary {
     flex-wrap: nowrap;
     order: 2;
 }
-div#container-page > nav#nav-binary > a#hamburger-menu {
+div#container-page > nav#nav-binary > a#hamburger-start {
     display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
 }
 div#container-page > nav#nav-binary > a.direction {
@@ -108,7 +108,7 @@ div#container-page > ul#nav-menu {
     order: 1;
     position: relative;
 }
-div#container-page > ul#nav-menu > a#hamburger-positioned {
+div#container-page > ul#nav-menu > a#hamburger-menu {
     position: absolute;
     top: 0;
 }
