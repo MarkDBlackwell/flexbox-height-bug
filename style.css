@@ -28,13 +28,13 @@ div#container-page > nav#nav-binary > a.direction:focus,
 div#container-page > nav#nav-binary > a.direction:hover {
     background-color: tan;
 }
-div#container-page > ul#nav-menu > a#hamburger-positioned {
-    font-size: 1rem;
-}
 div#container-page > ul#nav-menu {
     font-size: 0;
     padding-left: 0;
     padding-top: 1rem;
+}
+div#container-page > ul#nav-menu > a#hamburger-positioned {
+    font-size: 1rem;
 }
 div#container-page > ul#nav-menu > li {
     font-size: .5rem;
@@ -79,22 +79,19 @@ div#container-page > main#main > ul#table-of-contents {
     word-wrap: break-word;
 }
 div#container-page > nav#nav-binary {
-    align-content: flex-start;
     align-items: flex-start;
     display: flex;
     flex-basis: auto;
     flex-direction: column;
     flex-grow: 0;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-wrap: nowrap;
     order: 2;
-    width: auto;
 }
 div#container-page > nav#nav-binary > a#hamburger-menu {
     display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
 }
 div#container-page > nav#nav-binary > a.direction {
-    align-content: flex-start;
     align-items: flex-start;
     display: flex;
     flex-basis: auto;
@@ -105,23 +102,15 @@ div#container-page > nav#nav-binary > a.direction {
     justify-content: space-around;
 }
 div#container-page > ul#nav-menu {
-    align-self: flex-start;
-    display: block;
     flex-basis: auto;
     flex-grow: 0;
-    flex-shrink: 1;
-    height: auto;
+    flex-shrink: 0;
     order: 1;
     position: relative;
-    width: auto;
 }
 div#container-page > ul#nav-menu > a#hamburger-positioned {
     position: absolute;
     top: 0;
-    width: auto;
-}
-div#container-page > ul#nav-menu > li {
-    width: auto;
 }
 div#header-page {
     flex-basis: auto;
