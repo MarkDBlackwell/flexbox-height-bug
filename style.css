@@ -28,6 +28,18 @@ div#container-page > nav#nav-binary > a.direction:focus,
 div#container-page > nav#nav-binary > a.direction:hover {
     background-color: tan;
 }
+div#container-page > ul#nav-menu > a#hamburger-positioned {
+    font-size: 1rem;
+}
+div#container-page > ul#nav-menu {
+    font-size: 0;
+    padding-left: 0;
+    padding-top: 1rem;
+}
+div#container-page > ul#nav-menu > li {
+    font-size: .5rem;
+    list-style-type: none;
+}
 /* keep selectors single and alphabetized */
 /* Firefox needs all of the following */
 body {
@@ -79,8 +91,7 @@ div#container-page > nav#nav-binary {
     width: auto;
 }
 div#container-page > nav#nav-binary > a#hamburger-menu {
-    display: block; /* IE 10: flexbox child <a> defaults to 'display: inline'. */
-    width: auto;
+    display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
 }
 div#container-page > nav#nav-binary > a.direction {
     align-content: flex-start;
@@ -92,10 +103,24 @@ div#container-page > nav#nav-binary > a.direction {
     flex-shrink: 0;
     flex-wrap: nowrap;
     justify-content: space-around;
+}
+div#container-page > ul#nav-menu {
+    align-self: flex-start;
+    display: block;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: auto;
+    order: 1;
+    position: relative;
     width: auto;
 }
-div#container-page > nav#nav-binary > a.direction > i.fa {
-    flex-direction: column;
+div#container-page > ul#nav-menu > a#hamburger-positioned {
+    position: absolute;
+    top: 0;
+    width: auto;
+}
+div#container-page > ul#nav-menu > li {
     width: auto;
 }
 div#header-page {
