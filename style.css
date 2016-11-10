@@ -8,9 +8,6 @@ html {
     background-color: #ba9;
     font-size: 15vh;
 }
-body {
-    overflow-y: hidden;
-}
 div#container-page > main#main > article.article {
     border-color: blue;
     border-style: solid;
@@ -19,8 +16,13 @@ div#container-page > main#main > article.article {
 div#container-page > main#main > ul#table-of-contents {
     color: red;
     list-style-type: none;
+    text-align: right;
+    width: 39.1%;
 }
-div#container-page > nav#nav-binary > a#hamburger-start,
+div#container-page > nav#nav-binary > a#hamburger-start {
+    color: black;
+    display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
+}
 div#container-page > nav#nav-binary > a.direction {
     color: black;
 }
@@ -46,18 +48,18 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow-y: hidden;
 }
 div#container-page {
     display: flex;
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
-    justify-content: flex-start;
     order: 2;
     overflow-y: hidden;
 }
 div#container-page > main#main {
-    display: block; /* IE 10: <main> defaults to 'display: inline'. */
+    display: block; /* IE 10: <main> defaults to 'display: inline' */
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
@@ -72,14 +74,12 @@ div#container-page > main#main > ul#table-of-contents {
     overflow-wrap: break-word;
     position: absolute;
     right: .32rem; /* allow space for vertical scrollbar */
-    text-align: right;
     top: 0;
-    width: 39.1%;
     word-break: break-all;
-    word-wrap: break-word;
+    word-wrap: break-word; /* IE 11, Opera mini */
+    overflow-wrap: break-word;
 }
 div#container-page > nav#nav-binary {
-    align-items: flex-start;
     display: flex;
     flex-basis: auto;
     flex-direction: column;
@@ -88,11 +88,7 @@ div#container-page > nav#nav-binary {
     flex-wrap: nowrap;
     order: 2;
 }
-div#container-page > nav#nav-binary > a#hamburger-start {
-    display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
-}
 div#container-page > nav#nav-binary > a.direction {
-    align-items: flex-start;
     display: flex;
     flex-basis: auto;
     flex-direction: column;
@@ -101,16 +97,27 @@ div#container-page > nav#nav-binary > a.direction {
     flex-wrap: nowrap;
     justify-content: space-around;
 }
+/*
+    position: relative;
+*/
 div#container-page > ul#nav-menu {
+/*  align-self: flex-start; / * with this, Chrome fails to allow a vertical scrollbar */
     flex-basis: auto;
     flex-grow: 0; /* SeaMonkey */
     flex-shrink: 0;
+    max-height: 100%;
     order: 1;
-    position: relative;
+    overflow-x: visible;
+/* To avoid complex cross-axis margin/padding, use 'overflow-y: scroll' */
+    overflow-y: auto;
 }
-div#container-page > ul#nav-menu > a#hamburger-menu {
+/*
     position: absolute;
     top: 0;
+*/
+div#container-page > ul#nav-menu > a#hamburger-menu {
+    display: block;
+    z-index: 1;
 }
 div#header-page {
     flex-basis: auto;
