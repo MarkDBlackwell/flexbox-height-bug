@@ -83,7 +83,7 @@ div#container-page > nav#nav-binary {
     display: flex;
     flex-basis: auto;
     flex-direction: column;
-    flex-grow: 0;
+    flex-grow: 0; /* SeaMonkey */
     flex-shrink: 0;
     flex-wrap: nowrap;
     order: 2;
@@ -103,7 +103,7 @@ div#container-page > nav#nav-binary > a.direction {
 }
 div#container-page > ul#nav-menu {
     flex-basis: auto;
-    flex-grow: 0;
+    flex-grow: 0; /* SeaMonkey */
     flex-shrink: 0;
     order: 1;
     position: relative;
