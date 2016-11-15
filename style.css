@@ -1,13 +1,32 @@
 /* keep properties alphabetized */
-/* setup */
+/* reset */
 * {
     box-sizing: border-box;
+}
+a {
+    color: black; /* IE 11 */
     text-decoration: none;
 }
 html {
     background-color: #ba9;
+    font-family: Times New Roman, serif;
     font-size: 15vh;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
 }
+li {
+    list-style-type: none;
+}
+main {
+    display: block; /* IE 10: <main> defaults to 'display: inline' */
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+/* setup */
 div#container-page > main#main > article.article {
     border-color: blue;
     border-style: solid;
@@ -15,16 +34,9 @@ div#container-page > main#main > article.article {
 }
 div#container-page > main#main > ul#table-of-contents {
     color: red;
-    list-style-type: none;
-    text-align: right;
-    width: 39.1%;
 }
 div#container-page > nav#nav-binary > a#hamburger-start {
-    color: black;
     display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
-}
-div#container-page > nav#nav-binary > a.direction {
-    color: black;
 }
 div#container-page > nav#nav-binary > a.direction:focus,
 div#container-page > nav#nav-binary > a.direction:hover {
@@ -32,7 +44,6 @@ div#container-page > nav#nav-binary > a.direction:hover {
 }
 div#container-page > ul#nav-menu {
     font-size: 0;
-    padding-left: 0;
     padding-top: 1rem;
 }
 div#container-page > ul#nav-menu > a#hamburger-menu {
@@ -41,9 +52,6 @@ div#container-page > ul#nav-menu > a#hamburger-menu {
 div#container-page > ul#nav-menu > li {
     font-size: .5rem;
     list-style-type: none;
-}
-main {
-    display: block; /* IE 10: <main> defaults to 'display: inline' */
 }
 /* keep selectors single and alphabetized */
 /* Firefox needs all of the following */
@@ -64,6 +72,7 @@ div#container-page {
     overflow-y: hidden;
 }
 div#container-page > main#main {
+    display: flex; /* Opera 36 (Windows XP) */
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
@@ -74,14 +83,17 @@ div#container-page > main#main > article.article {
     max-height: 100%;
     overflow-y: auto;
 }
+/*
+    width: 39.1%;
+*/
 div#container-page > main#main > ul#table-of-contents {
     overflow-wrap: break-word;
     position: absolute;
     right: .32rem; /* allow space for vertical scrollbar */
+    text-align: right;
     top: 0;
     word-break: break-all;
     word-wrap: break-word; /* IE 11, Opera mini */
-    overflow-wrap: break-word;
 }
 div#container-page > nav#nav-binary {
     align-items: center;
