@@ -17,13 +17,13 @@ html {
     font-weight: normal;
 }
 li {
-    list-style-type: none;
+    list-style-type: none; /* IE 11, chrome, opera: doesn't inherit */
 }
 main {
     display: block; /* IE 10: <main> defaults to 'display: inline' */
 }
 ul {
-    list-style-type: none;
+    list-style-type: none; /* IE 11, chrome, opera: doesn't inherit */
     padding-left: 0;
 }
 /* setup */
@@ -51,7 +51,6 @@ div#container-page > ul#nav-menu > a#hamburger-menu {
 }
 div#container-page > ul#nav-menu > li {
     font-size: .5rem;
-    list-style-type: none;
 }
 /* keep selectors single and alphabetized */
 /* Firefox needs all of the following */
@@ -82,10 +81,8 @@ div#container-page > main#main {
 div#container-page > main#main > article.article {
     max-height: 100%;
     overflow-y: auto;
+    width: 100%;
 }
-/*
-    width: 39.1%;
-*/
 div#container-page > main#main > ul#table-of-contents {
     overflow-wrap: break-word;
     position: absolute;
