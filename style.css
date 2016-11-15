@@ -10,20 +10,19 @@ a {
 html {
     background-color: #ba9;
     font-family: Times New Roman, serif;
-    font-size: 15vh;
     font-stretch: normal;
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
 }
 li {
-    list-style-type: none; /* IE 11, chrome, opera: doesn't inherit */
+    list-style-type: none; /* Firefox, Chrome, Opera, IE 11: odd inheritance */
 }
 main {
     display: block; /* IE 10: <main> defaults to 'display: inline' */
 }
 ul {
-    list-style-type: none; /* IE 11, chrome, opera: doesn't inherit */
+    list-style-type: none; /* Firefox, Chrome, Opera, IE 11: odd inheritance */
     padding-left: 0;
 }
 /* setup */
@@ -51,6 +50,9 @@ div#container-page > ul#nav-menu > a#hamburger-menu {
 }
 div#container-page > ul#nav-menu > li {
     font-size: .5rem;
+}
+html {
+    font-size: 15vh;
 }
 /* keep selectors single and alphabetized */
 /* Firefox needs all of the following */
