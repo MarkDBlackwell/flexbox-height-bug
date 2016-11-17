@@ -16,13 +16,13 @@ html {
     font-weight: normal;
 }
 li {
-    list-style-type: none; /* Firefox, Chrome, Opera, IE 11: odd inheritance */
+    list-style-type: none; /* Firefox, Chrome, Opera, IE 11: inheritance odd */
 }
 main {
     display: block; /* IE 10: <main> defaults to 'display: inline' */
 }
 ul {
-    list-style-type: none; /* Firefox, Chrome, Opera, IE 11: odd inheritance */
+    list-style-type: none; /* Firefox, Chrome, Opera, IE 11: inheritance odd */
     padding-left: 0;
 }
 /* setup */
@@ -30,7 +30,7 @@ a#hamburger-menu {
     font-size: 1rem;
 }
 a#hamburger-start {
-    display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
+    display: block; /* IE 10: flexbox item <a> defaults to 'display: inline' */
 }
 article#article {
     border-color: blue;
@@ -63,7 +63,8 @@ a#hamburger-menu {
 article#article {
     max-height: 100%;
     overflow-y: auto;
-    width: 100%;
+    padding-right: .64rem; /* space for two vertical scrollbars */
+    width: 100%; /* IE 10 */
 }
 body {
     display: flex;
@@ -76,7 +77,7 @@ div#container-page {
     display: flex;
     flex-basis: auto;
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 1; /* IE 10: sometimes defaults to 0 */
     flex-wrap: nowrap;
     order: 2;
     overflow-y: hidden;
@@ -84,14 +85,14 @@ div#container-page {
 div#header-page {
     flex-basis: auto;
     flex-grow: 0;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Chrome, Opera */
     order: 1;
 }
 main#main {
     display: flex; /* Opera 36 (Windows XP) */
     flex-basis: auto;
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 1; /* IE 10: sometimes defaults to 0 */
     order: 3;
     position: relative;
 }
@@ -114,8 +115,9 @@ nav#nav-binary > a.direction {
     flex-wrap: nowrap;
     justify-content: space-around;
 }
+/*  ul#nav-menu { align-self: flex-start } Chrome: prevents vertical scrollbar
+*/
 ul#nav-menu {
-/*  align-self: flex-start; / * with this, Chrome fails to allow a vertical scrollbar */
     flex-basis: auto;
     flex-shrink: 0;
     max-height: 100%;
@@ -124,12 +126,16 @@ ul#nav-menu {
 /* To avoid complex cross-axis margin/padding, use 'overflow-y: scroll' */
     overflow-y: auto;
 }
+/*  ul#table-of-contents { hyphens: auto } 'word-break: break-all' prevents hyphens
+*/
 ul#table-of-contents {
     overflow-wrap: break-word;
+    padding-right: .32rem; /* space for vertical scrollbar */
     position: absolute;
-    right: .32rem; /* allow space for vertical scrollbar */
+    right: .32rem; /* space for article's vertical scrollbar */
     text-align: right;
     top: 0;
+    word-break: break-word; /* Chrome, Opera */
     word-break: break-all;
     word-wrap: break-word; /* IE 11, Opera mini */
 }
