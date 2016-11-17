@@ -26,36 +26,45 @@ ul {
     padding-left: 0;
 }
 /* setup */
-div#container-page > main#main > article.article {
+a#hamburger-menu {
+    font-size: 1rem;
+}
+a#hamburger-start {
+    display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
+}
+article#article {
     border-color: blue;
     border-style: solid;
     border-width: .2vw;
 }
-div#container-page > main#main > ul#table-of-contents {
-    color: red;
-}
-div#container-page > nav#nav-binary > a#hamburger-start {
-    display: block; /* IE 10: flexbox item <a> defaults to 'display: inline'. */
-}
-div#container-page > nav#nav-binary > a.direction:focus,
-div#container-page > nav#nav-binary > a.direction:hover {
-    background-color: tan;
-}
-div#container-page > ul#nav-menu {
-    font-size: 0;
-    padding-top: 1rem;
-}
-div#container-page > ul#nav-menu > a#hamburger-menu {
-    font-size: 1rem;
-}
-div#container-page > ul#nav-menu > li {
-    font-size: .5rem;
-}
 html {
     font-size: 15vh;
 }
+nav#nav-binary > a.direction:focus,
+nav#nav-binary > a.direction:hover {
+    background-color: tan;
+}
+ul#nav-menu {
+    font-size: 0;
+    padding-top: 1rem;
+}
+ul#nav-menu > li {
+    font-size: .5rem;
+}
+ul#table-of-contents {
+    color: red;
+}
 /* keep selectors single and alphabetized */
 /* Firefox needs all of the following */
+a#hamburger-menu {
+    display: block;
+    z-index: 1;
+}
+article#article {
+    max-height: 100%;
+    overflow-y: auto;
+    width: 100%;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -72,7 +81,13 @@ div#container-page {
     order: 2;
     overflow-y: hidden;
 }
-div#container-page > main#main {
+div#header-page {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    order: 1;
+}
+main#main {
     display: flex; /* Opera 36 (Windows XP) */
     flex-basis: auto;
     flex-grow: 1;
@@ -80,21 +95,7 @@ div#container-page > main#main {
     order: 3;
     position: relative;
 }
-div#container-page > main#main > article.article {
-    max-height: 100%;
-    overflow-y: auto;
-    width: 100%;
-}
-div#container-page > main#main > ul#table-of-contents {
-    overflow-wrap: break-word;
-    position: absolute;
-    right: .32rem; /* allow space for vertical scrollbar */
-    text-align: right;
-    top: 0;
-    word-break: break-all;
-    word-wrap: break-word; /* IE 11, Opera mini */
-}
-div#container-page > nav#nav-binary {
+nav#nav-binary {
     align-items: center;
     display: flex;
     flex-basis: auto;
@@ -103,7 +104,7 @@ div#container-page > nav#nav-binary {
     flex-wrap: nowrap;
     order: 2;
 }
-div#container-page > nav#nav-binary > a.direction {
+nav#nav-binary > a.direction {
     align-items: center;
     display: flex;
     flex-basis: auto;
@@ -113,7 +114,7 @@ div#container-page > nav#nav-binary > a.direction {
     flex-wrap: nowrap;
     justify-content: space-around;
 }
-div#container-page > ul#nav-menu {
+ul#nav-menu {
 /*  align-self: flex-start; / * with this, Chrome fails to allow a vertical scrollbar */
     flex-basis: auto;
     flex-shrink: 0;
@@ -123,13 +124,12 @@ div#container-page > ul#nav-menu {
 /* To avoid complex cross-axis margin/padding, use 'overflow-y: scroll' */
     overflow-y: auto;
 }
-div#container-page > ul#nav-menu > a#hamburger-menu {
-    display: block;
-    z-index: 1;
-}
-div#header-page {
-    flex-basis: auto;
-    flex-grow: 0;
-    flex-shrink: 0;
-    order: 1;
+ul#table-of-contents {
+    overflow-wrap: break-word;
+    position: absolute;
+    right: .32rem; /* allow space for vertical scrollbar */
+    text-align: right;
+    top: 0;
+    word-break: break-all;
+    word-wrap: break-word; /* IE 11, Opera mini */
 }
