@@ -51,7 +51,7 @@ ul#nav-menu {
 ul#nav-menu > li {
     font-size: .5rem;
 }
-ul#table-of-contents {
+nav#TableOfContents {
     color: red;
 }
 /* keep selectors single and alphabetized */
@@ -126,9 +126,9 @@ ul#nav-menu {
 /* To avoid complex cross-axis margin/padding, use 'overflow-y: scroll' */
     overflow-y: auto;
 }
-/*  ul#table-of-contents { hyphens: auto } 'word-break: break-all' prevents hyphens
+/*  nav#TableOfContents { hyphens: auto } 'word-break: break-all' prevents hyphens
 */
-ul#table-of-contents {
+nav#TableOfContents {
     overflow-wrap: break-word;
     padding-right: .32rem; /* space for vertical scrollbar */
     position: absolute;
